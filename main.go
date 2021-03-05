@@ -1,6 +1,9 @@
 package main
 
-import "flag"
+import (
+	"flag"
+	"time"
+)
 
 type dstInfo struct {
 	Title  string
@@ -24,5 +27,6 @@ func main() {
 	go func() {
 		load()
 	}()
+	time.Sleep(time.Second * 5)
 	getCurrent()
 }
